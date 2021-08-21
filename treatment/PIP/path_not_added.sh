@@ -3,8 +3,7 @@
 
 echo -e "\n" >> $HOME/.bashrc
 echo "# Exporting pip library binary files" >> $HOME/.bashrc
-echo -e "\n" >> $HOME/.bashrc
-echo export PATH=$HOME"/.local/bin/":$PATH >> $HOME/.bashrc
+echo 'export PATH=$HOME"/.local/bin/":$PATH' >> $HOME/.bashrc
 
 echo "PATH is updated"
 echo "Issue solved"

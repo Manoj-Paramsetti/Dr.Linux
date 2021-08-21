@@ -35,8 +35,21 @@ normal = "\033[0;0;0m"
 underlined_text = "\033[2;37;40m"
 green = "\033[1;32;40m"
 
+def askWhat():
+    main_logo()
+    print('1. Installation')
+    print('2. Error Fix')
+
+    n = int(input(green + "\nEnter your option number" + normal + "\n>>>")) - 1
+
+    if(n ==0):
+        return "installation"
+    else:
+        return "treatment"
 
 def showpkg(packages):
+    main_logo()
+
     length = len(packages)
     os.system("./drlinux/offblink")
 
@@ -46,9 +59,10 @@ def showpkg(packages):
     return n
 
 
-def showfile(packages, n):
+def showfile(folder, packages, n):
+    main_logo()
 
-    files = os.listdir("./" + packages[n])
+    files = os.listdir(folder+'/'+ packages[n])
     length = len(files)
 
     for i in range(0, length):
@@ -56,5 +70,5 @@ def showfile(packages, n):
 
     file = int(input(green + "\nEnter your option number" + normal + "\n>>>"))
 
-    os.system("chmod +x " + packages[n] + "/" + files[file - 1])
-    os.system("./" + packages[n] + "/" + files[file - 1])
+    os.system("chmod +x " + folder + "/" + packages[n] + "/" + files[file - 1])
+    os.system("./" + folder + "/" + packages[n] + "/" + files[file - 1])
